@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    [SerializeField] PlayerHelper _player;
+    PlayerHelper _player;
 
     // Start is called before the first frame update
     void Start()
     {
         Destroy(gameObject, 10);
+        _player = GameObject.FindAnyObjectByType<PlayerHelper>();
     }
 
     // Update is called once per frame
