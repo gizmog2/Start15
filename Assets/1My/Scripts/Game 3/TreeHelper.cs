@@ -16,7 +16,14 @@ public class TreeHelper : MonoBehaviour
     void Timer()
     {
         GetComponent<Animator>().SetTrigger("GetApple");
-        GameObject apple = Instantiate(Resources.Load("Apple") ,PointSpawn.position ,Random.rotation) as GameObject;
+        /*GameObject apple = Instantiate(Resources.Load("Apple") ,PointSpawn.position ,Random.rotation) as GameObject;
+        apple.GetComponent<Rigidbody>().AddForce(apple.transform.forward * 10);
+        Destroy(apple, 10f);*/
+    }
+
+    void SpawnApple()
+    {
+        GameObject apple = Instantiate(Resources.Load("Apple"), PointSpawn.position, Random.rotation) as GameObject;
         apple.GetComponent<Rigidbody>().AddForce(apple.transform.forward * 10);
         Destroy(apple, 10f);
     }
